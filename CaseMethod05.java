@@ -23,4 +23,22 @@ public class CaseMethod05 {
             }
         } while (pilihan != 5);
     }
+
+    static void tampilkanData() {
+        
+        if (jumlahData < 1) {
+            System.out.println("Belum ada pendaftar");
+            return;
+        }  else {
+            System.out.printf("%-4s %-15s %-12s %-20s %-18s %-10s %-10s\n",
+                "No", "Nama", "NIM", "Prodi", "Perusahaan", "Semester", "Status");
+
+            int no = 1;
+            for (int i = 0; i < jumlahData; i++) {
+                System.out.printf("%-4s %-15s %-12s %-20s %-18s %-10s %-10s\n",
+                "No",(i+1), data[i][0],data[i][1] ,data[i][2] ,data[i][3] ,data[i][4] ,data[i][5]  );
+            }
+        }
+    }
 }
+
