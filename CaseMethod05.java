@@ -7,6 +7,7 @@ public class CaseMethod05 {
     static int jumlahData = 0;
 
     static void menu() {
+        System.out.println();
         System.out.println("=== Sistem Pendaftaran Magang Mahasiswa ===");
         System.out.println("1. Tambah Data Magang");
         System.out.println("2. Tampilkan Data Pendaftaran Magang");
@@ -17,6 +18,7 @@ public class CaseMethod05 {
     }
 
     static void tambahData() {
+        System.out.println();
         System.out.print("Nama: ");
         String nama = sc.nextLine();
         System.out.print("NIM: ");
@@ -86,11 +88,12 @@ public class CaseMethod05 {
 
     public static void main(String[] args) {
         int pilihan;
-        int mahasiswa = 0;
 
         do {
             menu();
-            pilihan = Integer.parseInt(sc.nextLine());
+            pilihan = sc.nextInt();
+            sc.nextLine();
+
             switch (pilihan) {
                 case 1:
                     tambahData();
@@ -114,7 +117,7 @@ public class CaseMethod05 {
     }
 
     static void tampilkanData() {
-
+        System.out.println();
         if (jumlahData < 1) {
             System.out.println("Belum ada pendaftar");
             return;
@@ -130,6 +133,7 @@ public class CaseMethod05 {
     }
 
     static void hitungStatus() {
+        System.out.println();
         int diterima = 0, menunggu = 0, ditolak = 0;
 
         for (int i = 0; i < jumlahData; i++) {
