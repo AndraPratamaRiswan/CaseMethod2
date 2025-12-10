@@ -145,6 +145,8 @@ public class CaseMethod05 {
         System.out.println("Diterima: " + diterima);
         System.out.println("Menunggu: " + menunggu);
         System.out.println("Ditolak: " + ditolak);
+        System.out.println("Total pendaftar: " + jumlahData);
+
 
     }
 }
