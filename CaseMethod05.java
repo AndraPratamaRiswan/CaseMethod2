@@ -77,6 +77,9 @@ public class CaseMethod05 {
                         data[i][3],
                         data[i][4],
                         data[i][5]);
+            } else if (programStudi != data[i][2]) {
+                System.out.println("Program Studi yang dicari tidak valid");
+                break;
             }
         }
     }
