@@ -64,9 +64,9 @@ public class CaseMethod05 {
             pilihan = Integer.parseInt(sc.nextLine());
             switch (pilihan) {
                 case 1: tambahData(mahasiswa); mahasiswa++; break;
-                
+                case 2: tampilkanData();break;
                 case 3: cariByProdi(); break;
-                
+                case 4: hitungStatus(); break;
                 case 5: System.out.println("Keluar dari program."); break;
                 default: System.out.println("Pilihan tidak valid.");
             }
