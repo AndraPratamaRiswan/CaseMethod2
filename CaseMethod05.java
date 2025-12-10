@@ -29,13 +29,14 @@ public class CaseMethod05 {
         System.out.print("Status Magang (Diterima/Menunggu/Ditolak: ");
         data[mahasiswa][5] =  sc.nextLine();
         System.out.print("Data pendaftaran magang berhasil ditambahkan. Total pendaftar" + "1");
+        jumlahData += 1;
        
     }
 
     static void cariByProdi(){
         System.out.print("Masukkan Program Studi: ");
         String programStudi = sc.nextLine();
-        for(int i = 0; i < 100; i++){
+        for(int i = 0; i < jumlahData; i++){
            if (data[i][2].equalsIgnoreCase(programStudi)) {
 
     System.out.printf("%-4s %-20s %-12s %-25s %-15s %-10s %-10s\n",
@@ -47,7 +48,8 @@ public class CaseMethod05 {
             data[i][1],
             data[i][2],
             data[i][3],
-            data[i][4]
+            data[i][4],
+            data[i][5]
     );
 }
 
