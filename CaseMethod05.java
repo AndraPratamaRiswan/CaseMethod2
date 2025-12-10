@@ -102,8 +102,11 @@ public class CaseMethod05 {
                 menunggu++;
             } else if (status.equalsIgnoreCase("Ditolak")) {
                 ditolak++;
-            }    
+            }   
         }
+        System.out.println("Diterima: " +diterima);
+        System.out.println("Menunggu: " +menunggu);
+        System.out.println("Ditolak: " +ditolak);
         
     }
 }
