@@ -72,4 +72,37 @@ public class CaseMethod05 {
             }
         } while (pilihan != 5);
     }
+
+    static void tampilkanData() {
+        
+        if (jumlahData < 1) {
+            System.out.println("Belum ada pendaftar");
+            return;
+        }  
+            System.out.printf("%-4s %-15s %-12s %-20s %-18s %-10s %-10s\n",
+                "No", "Nama", "NIM", "Prodi", "Perusahaan", "Semester", "Status");
+
+            int no = 1;
+            for (int i = 0; i < jumlahData; i++) {
+                System.out.printf("%-4s %-15s %-12s %-20s %-18s %-10s %-10s\n",
+                (i+1), data[i][0],data[i][1] ,data[i][2] ,data[i][3] ,data[i][4] ,data[i][5]  );
+            }
+    }
+
+    static void hitungStatus() {
+        int diterima = 0, menunggu = 0, ditolak = 0;
+
+        for (int i = 0; i < jumlahData; i++) {
+            String status = data[i][5];
+            if (status.equalsIgnoreCase("Diterima")) {
+                diterima++;
+            } else if (status.equalsIgnoreCase("Menunggu")) {
+                menunggu++;
+            } else if (status.equalsIgnoreCase("Ditolak")) {
+                ditolak++;
+            }    
+        }
+        
+    }
 }
+
