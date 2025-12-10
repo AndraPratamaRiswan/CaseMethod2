@@ -5,6 +5,7 @@ public class CaseMethod05 {
     static Scanner sc = new Scanner(System.in);
     static String[][] data = new String [100][6];
     static int jumlahData = 0;
+
     static void menu() {
         System.out.println("=== Sistem Pendaftaran Magang Mahasiswa ===");
         System.out.println("1. Tambah Data Magang");
@@ -15,22 +16,49 @@ public class CaseMethod05 {
         System.out.print("Pilih menu (1-5): ");
     }
 
-    static void tambahData(int mahasiswa){
-        System.out.print("Nama Mahasiswa: ");
-        data[mahasiswa][0] =  sc.nextLine();
+    static void tambahData(){
+        System.out.print("Nama: ");
+        String nama = sc.nextLine();
         System.out.print("NIM: ");
-        data[mahasiswa][1] =  sc.nextLine();
+        String nim = sc.nextLine();
         System.out.print("Program Studi: ");
-        data[mahasiswa][2] =  sc.nextLine();
+        String prodi = sc.nextLine();
         System.out.print("Perusahaan Tujuan Magang: ");
-        data[mahasiswa][3] =  sc.nextLine();
-        System.out.print("Semester pengambilan barang: ");
-        data[mahasiswa][4] =  sc.nextLine();
-        System.out.print("Status Magang (Diterima/Menunggu/Ditolak: ");
-        data[mahasiswa][5] =  sc.nextLine();
-        System.out.print("Data pendaftaran magang berhasil ditambahkan. Total pendaftar" + "1");
-        jumlahData += 1;
-       
+        String tujuan = sc.nextLine();
+
+        String semester;
+        while (true){
+            System.out.print("Semester pengambilan magang(6 atau 7): ");
+            semester = sc.nextLine();
+            if (semester == "6" || semester == "7"){
+                break;
+            }else{
+                System.out.println("Input semester tidak valid! hanya boleh 6 atau 7.");
+            }
+        }
+
+        String status;
+        while (true){
+            System.out.print("Status magang (Diterima/Menunggu/Ditolak): ");
+            status = sc.nextLine();
+            if (status.equalsIgnoreCase("Diterima") ||
+                status.equalsIgnoreCase("Menunggu") ||
+                status.equalsIgnoreCase("Ditolak")){
+                    break;
+                }else{
+                    System.out.println("Input status tidak valid! pilihan: Diterima/Menunggu/Ditolak");
+                }
+        }
+        data[jumlahData][0] = nama;
+        data[jumlahData][1] = nim;
+        data[jumlahData][2] = prodi;
+        data[jumlahData][3] = tujuan;
+        data[jumlahData][4] = semester;
+        data[jumlahData][5] = status;
+
+        jumlahData++;
+        System.out.println("Data pendaftaran magang berhasil ditambahkan. Total pendaftar: "+ jumlahData);
+        
     }
 
     static void cariByProdi(){
@@ -66,7 +94,7 @@ public class CaseMethod05 {
             menu();
             pilihan = Integer.parseInt(sc.nextLine());
             switch (pilihan) {
-                case 1: tambahData(mahasiswa); mahasiswa++; break;
+                case 1: tambahData(); break;
                 case 2: tampilkanData();break;
                 case 3: cariByProdi(); break;
                 case 4: hitungStatus(); break;
