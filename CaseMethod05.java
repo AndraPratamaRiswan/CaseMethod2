@@ -46,6 +46,7 @@ public class CaseMethod05 {
     }
 
     static void tambahData() {
+        sc.nextLine();
         System.out.println();
         System.out.print("Nama: ");
         String nama = sc.nextLine();
@@ -107,6 +108,7 @@ public class CaseMethod05 {
     }
 
     static void cariByProdi() {
+        sc.nextLine();
         System.out.print("Masukkan Program Studi: ");
         String programStudi = sc.nextLine();
         for (int i = 0; i < jumlahData; i++) {
