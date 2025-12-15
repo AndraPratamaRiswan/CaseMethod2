@@ -35,6 +35,7 @@ public class CaseMethod05 {
     }
 
     static void menu() {
+        System.out.println();
         System.out.println("=== Sistem Pendaftaran Magang Mahasiswa ===");
         System.out.println("1. Tambah Data Magang");
         System.out.println("2. Tampilkan Data Pendaftaran Magang");
@@ -45,6 +46,7 @@ public class CaseMethod05 {
     }
 
     static void tambahData() {
+        System.out.println();
         System.out.print("Nama: ");
         String nama = sc.nextLine();
         System.out.print("NIM: ");
@@ -120,15 +122,70 @@ public class CaseMethod05 {
                         data[i][3],
                         data[i][4],
                         data[i][5]);
+<<<<<<< HEAD
             }else{
                 System.out.println("tidak ada data dengan jurusan : "+ programStudi);
+=======
+            } else if (programStudi != data[i][2]) {
+                System.out.println("Program Studi yang dicari tidak valid");
+                break;
+>>>>>>> a1495d7b68bef65d9cf2275d086a57a93d183469
             }
         }
     }
 
+<<<<<<< HEAD
     
+=======
+    public static void main(String[] args) {
+        int pilihan;
+
+        do {
+            menu();
+            pilihan = sc.nextInt();
+            sc.nextLine();
+
+            switch (pilihan) {
+                case 1:
+                    tambahData();
+                    break;
+                case 2:
+                    tampilkanData();
+                    break;
+                case 3:
+                    cariByProdi();
+                    break;
+                case 4:
+                    hitungStatus();
+                    break;
+                case 5:
+                    System.out.println("Keluar dari program.");
+                    break;
+                default:
+                    System.out.println("Pilihan tidak valid.");
+            }
+        } while (pilihan != 5);
+    }
+
+    static void tampilkanData() {
+        System.out.println();
+        if (jumlahData < 1) {
+            System.out.println("Belum ada pendaftar");
+            return;
+        }
+        System.out.printf("%-4s %-15s %-12s %-20s %-18s %-10s %-10s\n",
+                "No", "Nama", "NIM", "Prodi", "Perusahaan", "Semester", "Status");
+
+        int no = 1;
+        for (int i = 0; i < jumlahData; i++) {
+            System.out.printf("%-4s %-15s %-12s %-20s %-18s %-10s %-10s\n",
+                    (i + 1), data[i][0], data[i][1], data[i][2], data[i][3], data[i][4], data[i][5]);
+        }
+    }
+>>>>>>> a1495d7b68bef65d9cf2275d086a57a93d183469
 
     static void hitungStatus() {
+        System.out.println();
         int diterima = 0, menunggu = 0, ditolak = 0;
 
         for (int i = 0; i < jumlahData; i++) {
@@ -144,6 +201,8 @@ public class CaseMethod05 {
         System.out.println("Diterima: " + diterima);
         System.out.println("Menunggu: " + menunggu);
         System.out.println("Ditolak: " + ditolak);
+        System.out.println("Total pendaftar: " + jumlahData);
+
 
     }
 }
